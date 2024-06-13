@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trea's Web Page 😭</title>
+    <script type="module" src="https://public.tableau.com/javascripts/api/tableau.embedding.3.latest.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+    <style>
+        @keyframes rainbow {
+            0%, 100% { color: brown; }
+            16.7% { color: orange; }
+            33.3% { color: yellow; }
+            50% { color: brown; }
+            66.7% { color: sienna; }
+            83.3% { color: lemonchiffon; }
+        }
+
+        @keyframes flashing {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(to bottom, #fffacd, #fafad2); /* Light yellow gradient */
+        }
+        
+    
+        h1 {
+            font-family: 'Permanent Marker', cursive;
+            font-size: 3em;
+            text-align: center;
+            animation: flashing 1s infinite;
+            display: flex;
+            flex-wrap: nowrap;
+        }
+
+        h1 span {
+            display: inline-block;
+            animation: rainbow 3s infinite;
+        }
+
+        h1 span:nth-child(1) { animation-delay: 0s; }
+        h1 span:nth-child(2) { animation-delay: 0.1s; }
+        h1 span:nth-child(3) { animation-delay: 0.2s; }
+        h1 span:nth-child(4) { animation-delay: 0.3s; }
+        h1 span:nth-child(5) { animation-delay: 0.4s; }
+        h1 span:nth-child(6) { animation-delay: 0.5s; }
+        h1 span:nth-child(7) { animation-delay: 0.6s; }
+        h1 span:nth-child(8) { animation-delay: 0.7s; }
+        h1 span:nth-child(9) { animation-delay: 0.8s; }
+        h1 span:nth-child(10) { animation-delay: 0.9s; }
+        h1 span:nth-child(11) { animation-delay: 1s; }
+        h1 span:nth-child(12) { animation-delay: 1.1s; }
+        h1 span:nth-child(13) { animation-delay: 1.2s; }
+        h1 span:nth-child(14) { animation-delay: 1.3s; }
+        h1 span:nth-child(15) { animation-delay: 1.4s; }
+        h1 span:nth-child(16) { animation-delay: 1.5s; }
+        h1 span:nth-child(17) { animation-delay: 1.6s; }
+        h1 span:nth-child(18) { animation-delay: 1.7s; }
+        h1 span:nth-child(19) { animation-delay: 1.8s; }
+        h1 span:nth-child(20) { animation-delay: 1.9s; }
+        h1 span:nth-child(21) { animation-delay: 2s; }
+
+        .dog-gif {
+            margin-top: 20px;
+            width: 200px;
+        }
+
+        #tableauViz {
+            width: 800px;
+            height: 600px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>
+        <span>W</span><span>e</span><span>l</span><span>c</span><span>o</span><span>m</span><span>e</span> <span>_</span><span>t</span><span>o</span>
+        <span>T</span><span>r</span><span>e</span><span>a</span><span>'</span><span>s</span> <span>W</span><span>e</span><span>b</span> <span>P</span><span>a</span><span>g</span><span>e</span>
+    </h1>
+    <div class= "content"> 
+        <tableau-viz id="tableauViz"       
+  src='https://public.tableau.com/views/Superstore_embedded_800x800/Overview'      
+  toolbar="bottom" hide-tabs>
+</tableau-viz>
+    </div>
+
+
+
+
+    <iframe src="https://giphy.com/embed/Dh5q0sShxgp13DwrvG" width="480" height="295" style="" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/scaler-official-dogs-computer-typing-Dh5q0sShxgp13DwrvG">via GIPHY</a></p>
+    <div id="tableauViz"></div>
+    <script type="module">
+        import {
+            TableauViz,
+        } from 'https://public.tableau.com/javascripts/api/tableau.embedding.3.latest.min.js';
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const viz = new TableauViz();
+            viz.src = 'https://my-server/views/my-workbook/my-view';
+            viz.toolbar = 'bottom' 
+            viz.height = '1000vh' 
+            viz.width - '100vw';
+            
+            // add the viz object to the DOM
+            document.getElementById('tableauViz').appendChild(viz);
+            
+            let sheet = viz.workbook.activeSheet;
+            sheet.applyFilterAsync("Container", ["Boxes"], FilterUpdateType.Replace);
+        });
+    </script>
+    <script src="app.js"></script>
+</body>
+</html>
